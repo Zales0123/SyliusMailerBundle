@@ -25,11 +25,11 @@
     ],
     "require": {
         "php": "^7.4 || ^8.0",
-        "sylius-labs/polyfill-symfony-event-dispatcher": "^1.0",
-        "symfony/config": "^4.4 || ^5.1",
-        "symfony/dependency-injection": "^4.4 || ^5.1",
-        "symfony/framework-bundle": "^4.4 || ^5.1",
-        "symfony/http-kernel": "^4.4 || ^5.1",
+        "sylius-labs/polyfill-symfony-event-dispatcher": "dev-allow-symfony-6",
+        "symfony/config": "^4.4 || ^5.1 || ^6.0",
+        "symfony/dependency-injection": "^4.4 || ^5.1 || ^6.0",
+        "symfony/framework-bundle": "^4.4 || ^5.1 || ^6.0",
+        "symfony/http-kernel": "^4.4 || ^5.1 || ^6.0",
         "twig/twig": "^2.12",
         "webmozart/assert": "^1.9"
     },
@@ -84,5 +84,8 @@
             "vendor/bin/phpspec run --ansi --no-interaction",
             "vendor/bin/phpunit --colors=always"
         ]
-    }
+    },
+    "repositories": [
+        {"type": "vcs", "url": "git@github.com:Zales0123/PolyfillSymfonyEventDispatcher.git"}
+    ]
 }
