@@ -66,5 +66,21 @@ jobs:
                 run: composer test
 
             -
-                name: Run lint container
-                run: (cd src/Bundle/test && bin/console lint:container)
+                name: Run lint container (with default adapter)
+                run: |
+                    composer remove symfony/mailer --dev
+                    (cd src/Bundle/test && bin/console cache:clear)
+
+            -
+                name: Run lint container (with symfony/mailer)
+                run: |
+                    composer require symfony/mailer --dev
+                    cp src/Bundle/test/etc/bundle_with_symfony_mailer.yaml src/Bundle/test/config/packages/sylius_mailer.yaml
+                    (cd src/Bundle/test && bin/console cache:clear)
+
+            -
+                name: Run lint container (with swiftmailer)
+                run: |
+                    composer remove symfony/mailer --dev
+                    cp src/Bundle/test/etc/bundle_with_swiftmailer.yaml src/Bundle/test/config/packages/sylius_mailer.yaml
+                    (cd src/Bundle/test && bin/console cache:clear)
