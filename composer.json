@@ -64,6 +64,9 @@
             "dealerdirect/phpcodesniffer-composer-installer": false
         }
     },
+    "conflict": {
+        "symfony/swiftmailer-bundle": "*"
+    },
     "autoload": {
         "psr-4": {
             "Sylius\\Bundle\\MailerBundle\\": "src/Bundle/",
